@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function SubmitTheForm(e) {
+        console.log("Submitting Form!");
+        //ajax
+        e = e || event;
+        e.preventDefault(); // stops refreshing. as on submit, it sends the form to itself.
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="SubmitTheForm()">
+      <!-- method get/put with form only -->
+      <label for="txtUsername">Username : </label>
+      <input type="text" id="txtUsername" required />
+      <!-- for using required in input, we need a button -->
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

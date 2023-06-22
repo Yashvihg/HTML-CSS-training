@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .animated {
+        height: 200px;
+        width: 200px;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: lightblue;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        /* animation-name: simpleAnimation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;  */ /* 2 */
+      }
+
+      .animated:hover {
+        animation-name: simpleAnimation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate; /*reverse and alternate reverse are also there*/
+      }
+
+      @keyframes simpleAnimation {
+        /* to {
+          background-color: lightblue;
+        }
+        from {
+          background-color: lightcoral;
+        } */
+
+        25% {
+          background-color: lightcoral;
+        }
+        50% {
+          background-color: lightgreen;
+          /* position: relative;
+          left: 200px;
+          top: 200px;
+          transform: scale(0.5); */
+        }
+        75% {
+          background-color: lightslategray;
+        }
+        100% {
+          background-color: lightyellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated">Animated</div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas">
+      This will not be displayed if browser supports canvas !
+    </canvas>
+
+    <script>
+      let theCanvas = document.querySelector("#canvas");
+      //   if(theCanvas){
+      //   }
+
+      let ctx = theCanvas.getContext("2d");
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(100, 100);
+      ctx.lineTo(150, 100);
+
+      ctx.closePath();
+      ctx.strokeStyle = "blue";
+      ctx.stroke();
+    </script>
+  </body>
+</html>

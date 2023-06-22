@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", Initialize);
+      let targetDiv;
+      let socket;
+      function Initialize() {
+        socket = new WebSocket("ws://localhost:10000/.ws"); // invoked docker service instance and run there.
+        socket.onopen = function () {
+          targetDiv = document.querySelector("#targetDiv");
+          targetDiv.innerHTML += `<p style="color:green">Connected !</p>`;
+        };
+
+        socket.onerror = function (err) {
+          targetDiv.innerHTML += `<p style="color:red">${err} !</p>`;
+        };
+
+        socket.onmessage = function (message) {
+          targetDiv.innerHTML += `<p style="color:blue">Received (Echo) : ${message.data} !</p>`;
+        };
+      }
+
+      function SendMessage() {
+        let txtMsg = document.querySelector("#txtMsg").value;
+        socket.send(txtMsg);
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>
+        Message :
+        <input type="text" id="txtMsg" />
+        <button type="button" onclick="SendMessage()">Send</button>
+      </label>
+    </form>
+
+    <div id="targetDiv"></div>
+  </body>
+</html>
+
+<!-- docker run --detach ... -> command for docker instance to run the websocket.  -->

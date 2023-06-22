@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function StoreData() {
+        if (window.localStorage) {
+          let city = document.getElementById("txtCity").value;
+          let state = document.getElementById("txtState").value;
+          let cityDetails = { city, state }; // city:city, state:state is eradicated with ES6.
+          let JSONData = JSON.stringify(cityDetails); // js object to JSON representation
+
+          //   localStorage[city] = state;
+          sessionStorage[city] = JSONData;
+        }
+      }
+
+      function RetreiveData() {
+        let city = document.getElementById("txtCity").value;
+        console.log(JSON.parse(sessionStorage.getItem(city)));
+        // console.log(JSON.parse(localStorage.getItem(city)));
+
+        // console.log(localStorage[city]);
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>
+        City :
+        <input type="text" id="txtCity" />
+      </label>
+      <br />
+      <label>
+        State :
+        <input type="text" id="txtState" />
+      </label>
+      <button type="button" onclick="StoreData()">Store</button>
+      <button type="button" onclick="RetreiveData()">Retreive</button>
+    </form>
+  </body>
+</html>
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function StoreData() {
+        if (window.localStorage) {
+          let city = document.getElementById("txtCity").value;
+          let state = document.getElementById("txtState").value;
+
+          let cityDetails = { city, state };
+          let JSONData = JSON.stringify(cityDetails); // convert jsObject to JSON
+          //   localStorage[city] = JSONData;
+          // localStorage.setItem(city, JSONData);
+          sessionStorage[city] = JSONData;
+        }
+      }
+
+      function RetreiveData() {
+        let city = document.getElementById("txtCity").value;
+
+        console.log(JSON.parse(localStorage.getItem(city)));
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>
+        City :
+        <input type="text" id="txtCity" />
+      </label>
+      <br />
+      <label>
+        State :
+        <input type="text" id="txtState" />
+      </label>
+      <button type="button" onclick="StoreData()">Store</button>
+      <button type="button" onclick="RetreiveData()">Retreive</button>
+    </form>
+  </body>
+</html>
+
+
+ -->

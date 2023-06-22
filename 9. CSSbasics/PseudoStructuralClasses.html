@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* main > div {
+        background-color: lightblue;
+      } */
+      /* 
+      main:first-child {
+        background-color: lightblue;
+      } */
+      /* section:last-child {
+        background-color: lightblue;
+      } */
+      /* header:first-child {
+        background-color: rgb(185, 158, 209);
+      } */
+      /* section:nth-child(2n + 1) {
+        background-color: rgb(158, 209, 161);
+      } */
+
+      section:first-of-type {
+        border: 2px solid blue;
+      }
+      section:last-of-type {
+        border: 2px solid black;
+      }
+      div:first-of-type {
+        background-color: rgb(216, 181, 181);
+      }
+      div:last-of-type {
+        border: 2px solid rgb(0, 255, 200);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header !</h1>
+    </header>
+    <main>
+      <section>
+        <div>First Div 1!</div>
+        <div>First Div 2!</div>
+        <div>First Div 3!</div>
+        <div>First Div 4!</div>
+      </section>
+      <section>
+        <div>First Div !</div>
+      </section>
+      <section>
+        <!-- <header>HEADER IN SECTION FIRSTCHILD.</header> -->
+        <div>First Div !</div>
+      </section>
+      <section>
+        <div>First Div !</div>
+      </section>
+      <section>
+        <div>First Div !</div>
+      </section>
+      <section>
+        <div>First Div !</div>
+      </section>
+      <section>
+        <div>LAST Div !</div>
+      </section>
+    </main>
+  </body>
+</html>

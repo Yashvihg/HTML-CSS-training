@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .positioned {
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        background-color: lightblue;
+        border: 1px solid black;
+        left: 100px;
+        position: absolute;
+        z-index: 1;
+      }
+      .anotherpositioned {
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        background-color: lightgreen;
+        border: 1px solid black;
+        left: 150px;
+        top: 100px;
+        position: absolute;
+        /* z-index: -1; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="positioned">Positioned !</div>
+
+    <div class="anotherpositioned">Another Positioned !</div>
+
+    <header>
+      <h2>This is a Header !</h2>
+    </header>
+  </body>
+</html>

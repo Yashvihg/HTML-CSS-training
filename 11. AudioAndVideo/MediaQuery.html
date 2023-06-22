@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .usingmediaquery {
+        background-color: lightblue;
+      }
+
+      /* @media print {
+        .usingmediaquery {
+          background-color: lightcoral;
+          border: 2px solid black;
+        }
+      } */
+
+      /* @media screen and (min-width: 480px) {
+        .usingmediaquery {
+          background-color: lightcoral;
+          border: 2px solid black;
+          width: 50%;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .usingmediaquery {
+          background-color: lightgreen;
+          border: 2px solid black;
+          width: 80%;
+        }
+      } */
+
+      @media (orientation: landscape) {
+        .usingmediaquery {
+          background-color: rgb(61, 231, 183);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="usingmediaquery">Using Media Query !</div>
+  </body>
+</html>

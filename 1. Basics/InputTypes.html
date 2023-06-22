@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>HTML5 input Types</h1>
+    </header>
+    <main>
+      <form>
+        <div>
+          <label>
+            Username:
+            <input type="text" placeholder="Enter Username" required />
+          </label>
+          <!-- we do not need for unser label and input since input is inside label.  -->
+        </div>
+        <div>
+          <label>
+            Age:
+            <input type="number" min="18" max="80" />
+          </label>
+        </div>
+        <div>
+          <label>
+            DoB:
+            <input type="date" />
+            <!-- type can also be 'week' -->
+          </label>
+        </div>
+        <div>
+          <label>
+            DoB:(pattern)
+            <input
+              type="text"
+              placeholder="dd-mm-yyyy"
+              pattern="\d\d-\d\d-\d\d\d\d"
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Email:
+            <input type="email" placeholder="something@domain.ssul" />
+          </label>
+        </div>
+        <div>
+          <label>
+            Select Email:
+            <input type="text" list="emailList" />
+          </label>
+          <datalist id="emailList">
+            <option value="sumeet@gmail.com">Gmail</option>
+            <option value="sumeet@gmail.com">Hotmail</option>
+          </datalist>
+        </div>
+
+        <button>Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
+
+<!-- HTTP request methods mdn -- look -->

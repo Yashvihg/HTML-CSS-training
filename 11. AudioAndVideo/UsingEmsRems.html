@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- em is with repect to the font size. by default, its always set in pixels. the html still renders it in pixels.  -->
+    <!-- em gets converted to pixels wrt the pixel font size.  -->
+    <style>
+      .usingem {
+        /*font-size: 1.5em; */ /*16px X 1.5 multiples.*/
+        font-size: 20px;
+        width: 50em;
+        padding: 1em;
+        background-color: rgb(139, 242, 242);
+      }
+      p {
+        border: 1em solid rgb(62, 206, 231);
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="usingem">
+      This is using EM as an unit...
+      <p>this is a child of DIV</p>
+    </div>
+  </body>
+</html>

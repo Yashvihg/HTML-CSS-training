@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //because its a large array, it acts as a blocking code.
+      // it takes very ling to iterate and has a long delay time.
+      // it blocks the lick me function from working.
+      // the pproblem here is that we have to make them independent tasks so that click me works better.
+      // this happens beacuse JS is single thread. we need multiple threads.
+      //   let largeArray = [];
+      function HeavyLifting() {
+        let worker = new Worker("heavylifting.js");
+        worker.postMessage("Hello from the Main Thread");
+        worker.onmessage = function (msgFromWorkerThread) {
+          console.log(msgFromWorkerThread.data);
+        };
+        // console.log(largeArray[3000][3000]);
+      }
+      function ClickHandler() {
+        console.log("U clicked!! ");
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="HeavyLifting()">Do Heavy Lifting</button>
+    <button onclick="ClickHandler()">Click me!</button>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!-- <script>
+      let allImages = document.querySelector("img");
+      for (const image of allImages) {
+        //here we pass only the function body and not invoking it. function() { ManageState()}
+        imgage.addEventListener("click", () => ManageState(image)); // use arrow functions to not pass parameters otherwise it will keep calling function since it is in a loop.
+      } // alternate - ManageState.bind(null, image) -little older.
+      // ManageState(parameters passed here)
+
+      function ManageState(image) {
+        console.log(image.alt);
+      }
+    </script> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>SPA with History API</h1>
+    </header>
+    <main>
+      <div>
+        <img
+          src="https://play-lh.googleusercontent.com/RslBy1o2NEBYUdRjQtUqLbN-ZM2hpks1mHPMiHMrpAuLqxeBPcFSAjo65nQHbTA53YYn"
+          height="200px"
+          width="200px"
+          alt="html5"
+          style="margin-left: 80px"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png"
+          height="200px"
+          width="200px"
+          alt="CSS3"
+          style="margin-left: 80px"
+        />
+        <img
+          src="https://www.datocms-assets.com/45470/1631110818-logo-react-js.png"
+          height="200px"
+          width="200px"
+          alt="React"
+          style="margin-left: 80px"
+        />
+      </div>
+
+      <div
+        id="details"
+        style="margin-left: 100px; border: 2px solid black; height: 100px"
+      >
+        Click the image for viewing details !
+      </div>
+    </main>
+
+    <script>
+      let technologies = [
+        {
+          title: "HTML5",
+          description:
+            "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript. ",
+        },
+        {
+          title: "CSS3",
+          description:
+            "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript. ",
+        },
+        {
+          title: "React",
+          description:
+            "React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies.",
+        },
+      ];
+
+      let allImages = document.querySelectorAll("img");
+
+      for (let i = 0; i < allImages.length; i++) {
+        allImages[i].addEventListener("click", () =>
+          ManageState(technologies[i])
+        );
+      }
+
+      function ManageState(techObject) {
+        window.history.pushState(
+          techObject,
+          techObject.title,
+          techObject.title
+        );
+
+        // pushState(statedata(object),title,url)
+        let details = document.querySelector("#details");
+        details.innerHTML = techObject.description;
+      }
+
+      // On reload we get error since the browser is trying to acces the page on the server endpoint. but LIVESERVER does not understand the same.
+    // live server does not know what is /react and /css etc
+      window.addEventListener("popstate", (e) => {
+        let details = document.querySelector("#details");
+        details.innerHTML = e.state.description;
+      });
+    </script>
+  </body>
+</html>

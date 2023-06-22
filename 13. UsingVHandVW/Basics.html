@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .flex-container {
+        border: 2px solid rgb(254, 4, 4);
+        display: flex;
+        max-width: 1000px;
+      } */
+
+      .box {
+        box-sizing: border-box;
+        height: 200px;
+        width: 250px;
+        /* width: 200px; */
+        /* flex-basis: 200px; */
+        /*flex: 1 0 200px;*/ /* flex-grow flex-shrink flex-basis */
+        background-color: lightgreen;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="box flex-item-1">1</div>
+      <div class="box flex-item-2">2</div>
+      <div class="box flex-item-3">3</div>
+      <div class="box flex-item-3">4</div>
+    </div>
+  </body>
+</html>
+
+
+    <!-- VH and VW stands for viewport height and viewport width -->
+    <!-- always calculates everything wrt document.  -->
